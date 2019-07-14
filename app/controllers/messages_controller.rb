@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+	before_action :authenticate_user!, exept: [:index, :show]
 	before_action :find_msg, only: [:show, :edit, :update, :destroy]
 	
 	def index
